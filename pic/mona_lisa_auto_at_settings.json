@@ -1,0 +1,28 @@
+{
+  "source": "mona_lisa.png",
+  "sourceLicense": "Public Domain \u2014 painting by Leonardo da Vinci (d. 1519). Photographic reproduction from Wikimedia Commons, marked public domain.",
+  "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg",
+  "settings": {
+    "styleId": "auto",
+    "style_id": "auto",
+    "focusX": 0.5,
+    "focusY": 0.38,
+    "focus_x": 0.5,
+    "focus_y": 0.38,
+    "zoom": 1.0,
+    "ditherStrength": 1.0,
+    "ditherAlgo": "atkinson",
+    "colorDistance": "toon",
+    "brightness": 1.0,
+    "contrast": 1.0,
+    "warmth": 0.0,
+    "skinTint": 0.0,
+    "portrait": true,
+    "orientation": "portrait",
+    "autotune": true
+  },
+  "size": [
+    480,
+    800
+  ]
+}

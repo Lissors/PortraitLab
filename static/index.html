@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portrait Lab · Anime → E6</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?v=3.16.4" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <div id="cropOverlay" class="crop-overlay" hidden>
+      <canvas id="cropOverlayCanvas"></canvas>
+      <div class="crop-overlay-ui">
+        <p class="crop-overlay-hint">Set the crop · Drag = position · Scroll = zoom</p>
+        <div class="crop-overlay-actions">
+          <button type="button" class="btn ghost" id="btnCropReset">Reset</button>
+          <button type="button" class="btn primary" id="btnCropDone">Done</button>
+        </div>
+      </div>
+    </div>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <p class="brand-name">Portrait Lab</p>
+          <p class="brand-sub">Photo → AnimeGANv3 → E6</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <label class="btn primary" for="fileInput">Open photo</label>
+        <input id="fileInput" type="file" accept="image/*" hidden />
+        <button type="button" class="btn accent" id="btnExport" disabled>Save to /pic</button>
+      </div>
+    </header>
+
+    <main class="stage dual">
+      <section class="frame-stage" aria-label="Stage 1 Comic">
+        <p class="stage-label" id="labelComic">1 · Portrait (Forum)</p>
+        <div class="wood-frame">
+          <div class="mat">
+            <div class="eink-panel crop-stage" id="comicPanel">
+              <canvas id="cropCanvas" aria-label="Crop preview"></canvas>
+              <img id="viewComic" alt="Comic" hidden />
+              <div class="empty-state" id="emptyComic">
+                <p class="empty-title">Stage 1</p>
+                <p class="empty-copy">Pick a style and open a photo.</p>
+              </div>
+              <p class="crop-hint" id="cropHint" hidden>Drag = position · Scroll = zoom · Double-click = fullscreen</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="frame-stage" aria-label="Stage 2 E-Paper">
+        <p class="stage-label" id="labelEpaper">2 · Spectra 6 E-Paper</p>
+        <div class="wood-frame">
+          <div class="mat">
+            <div class="eink-panel">
+              <img id="viewEpaper" alt="E-Paper" hidden />
+              <div class="empty-state" id="emptyEpaper">
+                <p class="empty-title">Stage 2</p>
+                <p class="empty-copy">Atkinson dither → TF-card BMP.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="controls">
+        <div class="panel">
+          <h2>Style (Stage 1)</h2>
+          <p class="preset-blurb">Portrait (Forum) = Toon-nooT recommendation for faces.</p>
+          <div class="style-grid" id="styleGrid"></div>
+          <button type="button" class="btn intensive full" id="btnIntensive" disabled title="Load a photo and set the crop first">
+            Intensive search
+          </button>
+          <p class="intensive-hint" id="intensiveHint">After crop: all styles + fine grid (~3–8 min).</p>
+          <div class="swatches" id="swatches"></div>
+        </div>
+
+        <div class="panel">
+          <h2>E-Paper</h2>
+          <label class="field">
+            <span>Brightness <em id="brightVal">100%</em></span>
+            <input id="brightness" type="range" min="0" max="100" value="50" />
+          </label>
+          <label class="field">
+            <span>Contrast <em id="contrastVal">100%</em></span>
+            <input id="contrast" type="range" min="0" max="100" value="50" />
+          </label>
+          <label class="field">
+            <span>Warmth <em id="warmthVal">Mid</em></span>
+            <input id="warmth" type="range" min="0" max="100" value="50" />
+          </label>
+          <label class="field">
+            <span>Skin <em id="skinVal">pink ← mid → yellow</em></span>
+            <input id="skinTint" type="range" min="0" max="100" value="50" />
+          </label>
+          <label class="field">
+            <span>Dither <em id="ditherVal">100%</em></span>
+            <input id="dither" type="range" min="0" max="100" value="100" />
+          </label>
+          <label class="field">
+            <span>Algorithm</span>
+            <select id="ditherAlgo">
+              <option value="atkinson" selected>Atkinson (Portrait)</option>
+              <option value="floyd">Floyd–Steinberg</option>
+              <option value="bluenoise">Blue Noise</option>
+              <option value="none">No dither</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Color distance</span>
+            <select id="colorDistance">
+              <option value="toon" selected>Toon-nooT (Default)</option>
+              <option value="lab">CIE L*a*b*</option>
+            </select>
+          </label>
+          <button type="button" class="btn ghost" id="btnSw" style="margin-top:0.75rem;width:100%">
+            Convert to B&amp;W
+          </button>
+          <button type="button" class="btn ghost" id="btnResetEpaper" style="margin-top:0.5rem;width:100%">
+            Reset
+          </button>
+        </div>
+
+        <div class="panel">
+          <h2>Crop (Stage 1)</h2>
+          <p class="preset-blurb">In the overview: pick format, position &amp; zoom — then Confirm position. Start = centered cover (zoom 100%), higher = crop edges.</p>
+          <div class="field">
+            <span>Output format</span>
+            <div class="format-toggle" role="group" aria-label="Output format">
+              <button type="button" class="format-btn active" id="btnFormatPortrait" data-format="portrait" aria-pressed="true">
+                Portrait
+                <em>480×800</em>
+              </button>
+              <button type="button" class="format-btn" id="btnFormatLandscape" data-format="landscape" aria-pressed="false">
+                Landscape
+                <em>800×480</em>
+              </button>
+            </div>
+          </div>
+          <label class="field">
+            <span>Zoom <em id="zoomVal">100% · cover</em></span>
+            <input id="zoom" type="range" min="100" max="300" value="100" step="0.25" />
+          </label>
+          <label class="field">
+            <span>Focus X <em id="focusXVal">50%</em></span>
+            <input id="focusX" type="range" min="0" max="100" value="50" step="0.1" />
+          </label>
+          <label class="field">
+            <span>Focus Y <em id="focusYVal">50%</em></span>
+            <input id="focusY" type="range" min="0" max="100" value="50" step="0.1" />
+          </label>
+          <button type="button" class="btn primary full" id="btnApplyStyle" style="margin-top:0.75rem" disabled>
+            Confirm position · render
+          </button>
+          <button type="button" class="btn ghost full" id="btnApplyEpaper" style="margin-top:0.5rem" disabled>
+            Re-run E-Paper
+          </button>
+          <button type="button" class="btn ghost full" id="btnResetCrop" style="margin-top:0.5rem">
+            Reset crop
+          </button>
+          <p class="frame-caption" style="margin-top:0.75rem">
+            <span id="statusLine">Ready</span>
+            <span class="dot"></span>
+            <span>E6 · 6 colors</span>
+          </p>
+        </div>
+
+        <div class="panel gallery-panel">
+          <div class="gallery-head">
+            <h2>/pic</h2>
+            <button type="button" class="btn ghost tiny" id="btnRefreshGallery">Refresh</button>
+          </div>
+          <button type="button" class="btn ghost full" id="btnAutotune" style="margin-bottom:0.75rem">
+            Auto-Tune all originals
+          </button>
+          <p class="preset-blurb" style="margin-top:0">Click = simulation · Right-click = delete.</p>
+          <ul class="gallery" id="gallery"></ul>
+        </div>
+      </aside>
+    </main>
+
+    <script type="module" src="/app.js?v=3.16.4"></script>
+  </body>
+</html>

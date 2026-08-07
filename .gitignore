@@ -1,0 +1,37 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.portrait_lab_open.lock
+*.egg-info/
+.pytest_cache/
+_make_mona_demo.py
+
+# Transient dirs
+/tmp/
+tmp/
+
+# Finished device exports (keep folder only)
+pic/*
+!pic/.gitkeep
+# Allowed demo export for the PD Mona Lisa sample
+!pic/mona_lisa_auto_at.bmp
+!pic/mona_lisa_auto_at_settings.json
+!pic/mona_lisa_auto_at.SOURCE.md
+
+# Source photos — never commit private, personal, or copyrighted images
+original/*
+!original/.gitkeep
+# Allowed public-domain demo (Leonardo da Vinci / Wikimedia Commons PD)
+!original/mona_lisa.png
+!original/mona_lisa.SOURCE.md
+
+# ONNX / large model weights — download locally, do not publish
+models/*
+!models/.gitkeep
+
+# Fetch-/batch reports under original/ (belt and suspenders)
+original/_fetch*
+original/_batch*
+original/_*.txt
+original/_*.json
