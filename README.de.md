@@ -220,9 +220,20 @@ PortraitLab/
 
 ---
 
-## Lizenz & Inhaltsregeln
+## Lizenz
 
-- In diesem Repository nur **Code und UI**.  
-- **Keine** privaten Fotos, Familienbilder oder urheberrechtlich geschützten Museums-/Künstler-Scans committen.  
-- **Keine** großen ONNX-Gewichte committen, außer du hast Weitergaberechte und überschreibst bewusst `.gitignore`.  
-- Drittanbieter-Modelle (AnimeGANv3, BiSeNet, …) unterliegen eigenen Lizenzen — Download und Nutzung nach Upstream-Bedingungen.
+**Anwendungscode & UI:** siehe [`LICENSE`](LICENSE).
+
+| Erlaubt | Nicht erlaubt |
+|---------|----------------|
+| Herunterladen | Verändern / Ableitungen |
+| **Exakte unveränderte** Kopien anfertigen und weitergeben | Software **nutzen / ausführen** (jeder Zweck) |
+| | Neu lizenzieren, verkaufen, Hinweise entfernen |
+
+Demo-Assets nur dort anders, wo gekennzeichnet (z. B. CC0-Demo, gemeinfreie Mona Lisa — siehe deren `SOURCE` / `LICENSE`).
+
+### Inhaltsregeln (für Pflege des Repos)
+
+- Keine privaten oder modern urheberrechtlich geschützten Fotos committen.  
+- Keine ONNX-Gewichte committen ohne Weitergaberechte.  
+- Drittanbieter-Modelle (AnimeGANv3, BiSeNet, …) behalten ihre Upstream-Lizenzen.

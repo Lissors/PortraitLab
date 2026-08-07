@@ -220,9 +220,20 @@ PortraitLab/
 
 ---
 
-## License & content policy
+## License
 
-- Ship **code and UI only** in this repository.  
-- **Do not** commit private photos, family pictures, or copyrighted museum/artist scans.  
-- **Do not** commit large ONNX weights unless you have redistributed rights and intentionally override `.gitignore`.  
-- Third-party models (AnimeGANv3, BiSeNet, …) remain under their own licenses — download and use them according to upstream terms.
+**Application code & UI:** see [`LICENSE`](LICENSE).
+
+| Allowed | Not allowed |
+|---------|-------------|
+| Download | Modify / create derivatives |
+| Make and share **exact unmodified** copies | **Use / run** the software (any purpose) |
+| | Relicense, sell, or remove notices |
+
+Demo assets only where marked otherwise (e.g. CC0 synthetic sample, public-domain Mona Lisa — see their `SOURCE` / `LICENSE` files).
+
+### Content policy (contributors / maintainers)
+
+- Do **not** commit private photos or modern copyrighted images.  
+- Do **not** commit ONNX weights unless you have redistribution rights.  
+- Third-party models (AnimeGANv3, BiSeNet, …) keep their own upstream licenses.
