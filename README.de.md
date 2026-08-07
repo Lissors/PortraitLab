@@ -222,13 +222,15 @@ PortraitLab/
 
 ## Lizenz
 
-**Anwendungscode & UI:** siehe [`LICENSE`](LICENSE).
+**Anwendungscode & UI:** siehe [`LICENSE`](LICENSE) — **nicht-kommerziell**.
 
 | Erlaubt | Nicht erlaubt |
 |---------|----------------|
-| Herunterladen | Verändern / Ableitungen |
-| **Exakte unveränderte** Kopien anfertigen und weitergeben | Software **nutzen / ausführen** (jeder Zweck) |
-| | Neu lizenzieren, verkaufen, Hinweise entfernen |
+| Herunterladen; exakte unveränderte Kopien | **Kommerzielle Nutzung** (Verkauf, bezahlter Dienst, Produkt) |
+| Private, persönliche, nicht-kommerzielle Nutzung | Kommerzielles Produkt auf Basis dieses Codes |
+| | Veränderte Versionen verbreiten; neu lizenzieren; Hinweise entfernen |
+
+Ziel: Andere dürfen anschauen, kopieren und privat nutzen — aber **nicht kommerzialisieren**.
 
 Demo-Assets nur dort anders, wo gekennzeichnet (z. B. CC0-Demo, gemeinfreie Mona Lisa — siehe deren `SOURCE` / `LICENSE`).
 

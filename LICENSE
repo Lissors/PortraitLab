@@ -1,7 +1,7 @@
-Portrait Lab — Proprietary Source-Available License
+Portrait Lab — Proprietary Source-Available License (Non-Commercial)
 Copyright (c) 2026 Lissors. All rights reserved.
 
-SPDX-License-Identifier: LicenseRef-PortraitLab-NoUse-NoMod
+SPDX-License-Identifier: LicenseRef-PortraitLab-NonCommercial
 
 ================================================================
 ENGLISH
@@ -18,23 +18,40 @@ Separate terms apply to demo assets only where marked, for example:
     public-domain painting / documented public-domain reproduction
     (see original/mona_lisa.SOURCE.md)
 
-1. Permitted
+PURPOSE
+  You may look at, download, and copy this project, and use it privately
+  for yourself. You may NOT commercialize it or the product concept as
+  implemented here (no selling, no paid service, no commercial product
+  based on this software).
+
+1. Permitted (non-commercial only)
 
    You may:
-   (a) download this repository; and
-   (b) make and redistribute exact, unmodified copies of this repository
-       (or exact unmodified copies of files from it that are covered by
-       this license).
+   (a) download this repository;
+   (b) make and redistribute exact, unmodified copies;
+   (c) run and use the software for personal, private, non-commercial
+       purposes only (e.g. preparing your own images for your own
+       e-paper device).
 
 2. Not permitted (without prior written permission from the copyright holder)
 
    You may NOT:
-   (a) modify, adapt, translate, or create derivative works of the covered
-       code or UI;
-   (b) use, run, execute, or operate the Portrait Lab software (or any
-       part of it) for any purpose, personal or commercial;
-   (c) remove or alter copyright, license, or attribution notices;
-   (d) sublicense, sell, or relicense the covered material under other terms.
+   (a) use the software, or any modified or derived version, for any
+       commercial purpose — including but not limited to: selling the
+       software; offering it as a paid app, SaaS, or service; bundling it
+       in a commercial product; using it to produce paid deliverables or
+       commercial image-processing services;
+   (b) commercialize the Portrait Lab workflow/product concept as
+       embodied in this codebase (style → Spectra 6 dither → device BMP
+       prep tool) by shipping a competing commercial product that is
+       substantially based on this code;
+   (c) modify, adapt, or create derivative works for distribution or for
+       commercial use (private experiments that you do not share or sell
+       are tolerated only if they remain strictly personal and are not
+       published);
+   (d) remove or alter copyright, license, or attribution notices;
+   (e) sublicense, sell, or relicense the covered material under other
+       terms.
 
 3. No trademark rights
 
@@ -45,15 +62,22 @@ Separate terms apply to demo assets only where marked, for example:
 
    THE SOFTWARE AND MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
    KIND. THE COPYRIGHT HOLDER IS NOT LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
-   LIABILITY ARISING FROM THE MATERIALS OR THEIR DISTRIBUTION AS UNMODIFIED
-   COPIES.
+   LIABILITY ARISING FROM THE MATERIALS OR THEIR USE OR DISTRIBUTION.
 
 5. Termination
 
    Any breach of this license terminates your rights automatically.
    Sections 3 and 4 survive termination.
 
-For permission beyond this license, contact the repository owner (Lissors).
+6. Note on ideas vs. code
+
+   Copyright and this license protect this software and its expression.
+   They do not monopolize abstract ideas in general. Independently created
+   software written from scratch without using this code is outside this
+   license — but using this code (or a derivative) commercially is not
+   allowed.
+
+For commercial permission, contact the repository owner (Lissors).
 
 ================================================================
 DEUTSCH
@@ -71,23 +95,38 @@ ist, z. B.:
     gemeinfreies Gemälde / dokumentierte PD-Reproduktion
     (siehe original/mona_lisa.SOURCE.md)
 
-1. Erlaubt
+ZWECK
+  Anschauen, Herunterladen, Kopieren und private Nutzung für dich selbst
+  sind erlaubt. Kommerzialisieren — also verkaufen, als bezahlten Dienst
+  anbieten oder daraus ein kommerzielles Produkt machen — ist nicht
+  erlaubt.
+
+1. Erlaubt (nur nicht-kommerziell)
 
    Sie dürfen:
-   (a) dieses Repository herunterladen; und
-   (b) exakte, unveränderte Kopien dieses Repositories (bzw. exakte
-       unveränderte Kopien der davon erfassten Dateien) anfertigen und
-       weitergeben.
+   (a) dieses Repository herunterladen;
+   (b) exakte, unveränderte Kopien anfertigen und weitergeben;
+   (c) die Software ausschließlich privat und nicht-kommerziell nutzen
+       und ausführen (z. B. eigene Bilder für das eigene E-Paper-Gerät
+       vorbereiten).
 
 2. Nicht erlaubt (ohne vorherige schriftliche Erlaubnis des Rechteinhabers)
 
    Sie dürfen NICHT:
-   (a) den erfassten Code oder die UI verändern, anpassen, übersetzen oder
-       Bearbeitungen / abgeleitete Werke erstellen;
-   (b) die Portrait-Lab-Software (oder Teile davon) nutzen, ausführen oder
-       betreiben — zu keinem Zweck, weder privat noch kommerziell;
-   (c) Urheberrechts-, Lizenz- oder Hinweisvermerke entfernen oder ändern;
-   (d) das erfasste Material unterlizenzieren, verkaufen oder unter anderen
+   (a) die Software oder eine veränderte / abgeleitete Version kommerziell
+       nutzen — insbesondere: Verkauf der Software; Angebot als bezahlte
+       App, SaaS oder Dienst; Einbau in ein kommerzielles Produkt;
+       Nutzung für bezahlte Aufträge oder kommerzielle Bild-Services;
+   (b) das in diesem Code verkörperte Portrait-Lab-Produktkonzept
+       (Stil → Spectra-6-Dither → Geräte-BMP-Vorbereitung) kommerziell
+       verwerten, indem Sie ein konkurrierendes kommerzielles Produkt
+       ausliefern, das wesentlich auf diesem Code basiert;
+   (c) für Weitergabe oder kommerzielle Nutzung verändern, anpassen oder
+       abgeleitete Werke erstellen (rein private Experimente ohne
+       Veröffentlichung und ohne Verkauf werden nur geduldet, wenn sie
+       streng persönlich bleiben);
+   (d) Urheberrechts-, Lizenz- oder Hinweisvermerke entfernen oder ändern;
+   (e) das Material unterlizenzieren, verkaufen oder unter anderen
        Bedingungen neu lizenzieren.
 
 3. Keine Markenrechte
@@ -101,12 +140,20 @@ ist, z. B.:
    DIE SOFTWARE UND MATERIALIEN WERDEN „WIE BESEHEN“ BEREITGESTELLT, OHNE
    JEGLICHE GEWÄHRLEISTUNG. DER RECHTEINHABER HAFTET NICHT FÜR ANSPRÜCHE,
    SCHÄDEN ODER SONSTIGE VERBINDLICHKEITEN AUS DEN MATERIALIEN ODER IHRER
-   WEITERGABE ALS UNVERÄNDERTE KOPIEN.
+   NUTZUNG ODER WEITERGABE.
 
 5. Beendigung
 
    Jeder Verstoß beendet Ihre Rechte automatisch. Die Abschnitte 3 und 4
    bleiben bestehen.
 
-Für weitergehende Erlaubnis: Rechteinhaber / Repository-Inhaber (Lissors)
+6. Hinweis Idee vs. Code
+
+   Urheberrecht und diese Lizenz schützen diese Software und ihre konkrete
+   Umsetzung. Allgemeine Ideen sind nicht monopolisierbar. Unabhängig von
+   Grund auf neu geschrieben Software ohne Nutzung dieses Codes fällt nicht
+   unter diese Lizenz — die kommerzielle Nutzung dieses Codes (oder einer
+   Ableitung) ist aber nicht erlaubt.
+
+Für kommerzielle Erlaubnis: Rechteinhaber / Repository-Inhaber (Lissors)
 kontaktieren.
